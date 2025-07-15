@@ -50,6 +50,9 @@
     ({...}: {
       home.packages = with pkgs; [
         hyprpaper
+        jq
+        helix
+        git
         hyprpicker
         cliphist
         grimblast
@@ -90,6 +93,7 @@
           "$editor" = "code --disable-gpu";
           "$fileManager" = "$term --class \"terminalFileManager\" -e ${terminalFileManager}";
           "$browser" = browser;
+          monitor = [ "HDMI-A-1,2560x1080@60.00Hz,1920x0,1" ];
 
           env = [
             "XDG_CURRENT_DESKTOP,Hyprland"

@@ -37,11 +37,16 @@
       url = "github:nix-community/nix4nvchad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak/?ref=latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
+    nix-flatpak,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -61,7 +66,7 @@
       locale = "en_GB.UTF-8"; # CHOOSE YOUR LOCALE
       timezone = "Europe/London"; # CHOOSE YOUR TIMEZONE
       kbdLayout = "us"; # CHOOSE YOUR KEYBOARD LAYOUT
-      # kbdVariant = "extd"; # CHOOSE YOUR KEYBOARD VARIANT (Can leave empty)
+      kbdVariant = ""; # CHOOSE YOUR KEYBOARD VARIANT (Can leave empty)
       consoleKeymap = "us"; # CHOOSE YOUR CONSOLE KEYMAP (Affects the tty?)
     };
 
@@ -78,7 +83,7 @@
       Default = nixpkgs.lib.nixosSystem {
         system = forAllSystems (system: system);
         specialArgs = {inherit self inputs outputs;} // settings;
-        modules = [./hosts/Default/configuration.nix];
+        modules = [./hosts/Default/configuration.nix nix-flatpak.nixosModules.nix-flatpak ];
       };
     };
   };

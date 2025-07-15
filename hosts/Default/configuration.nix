@@ -82,6 +82,12 @@
       log_level = "error";
     };
   };
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "app.zen_browser.zen"
+    ];
+  };
   users.users.minidlna = {
     extraGroups = ["users"]; # so minidlna can access the files.
   };
