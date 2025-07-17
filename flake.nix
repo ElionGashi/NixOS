@@ -39,7 +39,6 @@
     };
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak/?ref=latest";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -54,7 +53,7 @@
       # User configuration
       username = "elion"; # automatically set with install.sh and live-install.sh
       editor = "nixvim"; # nixvim, vscode, nvchad, neovim, emacs (WIP)
-      browser = "floorp"; # firefox, floorp, zen
+      browser = "app.zen_browser.zen"; # firefox, floorp, zen
       terminal = "kitty"; # kitty, alacritty, wezterm
       terminalFileManager = "yazi"; # yazi or lf
       sddmTheme = "purple_leaves"; # astronaut, black_hole, purple_leaves, jake_the_dog, hyprland_kath
@@ -64,7 +63,7 @@
       videoDriver = "nvidia"; # CHOOSE YOUR GPU DRIVERS (nvidia, amdgpu or intel)
       hostname = "elion"; # CHOOSE A HOSTNAME HERE
       locale = "en_GB.UTF-8"; # CHOOSE YOUR LOCALE
-      timezone = "Europe/London"; # CHOOSE YOUR TIMEZONE
+      timezone = "Europe/Tirane"; # CHOOSE YOUR TIMEZONE
       kbdLayout = "us"; # CHOOSE YOUR KEYBOARD LAYOUT
       kbdVariant = ""; # CHOOSE YOUR KEYBOARD VARIANT (Can leave empty)
       consoleKeymap = "us"; # CHOOSE YOUR CONSOLE KEYMAP (Affects the tty?)

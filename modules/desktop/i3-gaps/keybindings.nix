@@ -10,7 +10,7 @@ in {
   "${mod}+Return" = "exec --no-startup-id ${terminal}";
 
   # Launch Browser
-  "${mod}+f" = "exec --no-startup-id floorp";
+  "${mod}+f" = "exec --no-startup-id flatpak run org.zen_browser.Zen ";
 
   # Launch Spotify
   "${mod}+s" = "exec --no-startup-id spotify";

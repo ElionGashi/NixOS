@@ -59,6 +59,11 @@
 
   # Define system packages here
   environment.systemPackages = with pkgs; [
+  nodejs
+  nodePackages.npm
+  nodePackages.pnpm
+  php
+  phpPackages.composer
   ];
 
   networking.hostName = hostname; # Set hostname defined in flake.nix

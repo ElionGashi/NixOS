@@ -221,7 +221,7 @@
 
   # Default shell
   programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = pkgs.fish;
 
   fonts.packages = with pkgs.nerd-fonts; [
     jetbrains-mono
