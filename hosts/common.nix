@@ -54,10 +54,10 @@
         if pkgs.stdenv.isDarwin
         then "/Users/${username}"
         else "/home/${username}";
-      home.stateVersion = "23.11"; # Please read the comment before changing.
+      home.stateVersion = "25.05"; # Please read the comment before changing.
       home.sessionVariables = {
         EDITOR = "nvim";
-        BROWSER = browser;
+        BROWSER = "app.zen_browser.zen";
         TERMINAL = terminal;
       };
 
